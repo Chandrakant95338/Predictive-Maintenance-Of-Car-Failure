@@ -21,7 +21,9 @@ Car breakdown prediction for every unique vehicleId to happened within 30 days.
 
 Source data Its takes three datasets as inputs. 
 • Training data: It is each Vehicalid engine run-to-failure data. 
+
 • Testing data: It is the Vehicalid engine operating data without failure events recorded.
+
 • Ground truth test data: It contains the information of Remaining Useful Day(RUL) for a particular vehicleId in the testing data.
 
 Prepare the traning&testing data
@@ -29,8 +31,12 @@ In this section we will summarize the process of preparing the test data and exp
 
 Feature engineering
 Another important task to generate training and testing features. The feature engineering process on the training and testing datasets respectively. The features that are included or created in the training data can be grouped into two categories. 
-• Selected raw features • Aggregate features Selected raw features The raw features are those that are included in the original input data. In this data, all the sensor measurements (s1-s21) are included in the training data. Other raw features get used are: days, ecoMode, cityMode, sportsMode Aggregate features These features summarize the historical activity of each asset. In the template, two types of aggregate features are created for each of the 21 sensors. 
+• Selected raw features
+
+• Aggregate features Selected raw features The raw features are those that are included in the original input data. In this data, all the sensor measurements (s1-s21) are included in the training data. Other raw features get used are: days, ecoMode, cityMode, sportsMode Aggregate features These features summarize the historical activity of each asset. In the template, two types of aggregate features are created for each of the 21 sensors. 
+
 • Predicted the Remaining Useful Life (RUL), or Time to Failure (TTF).
+
 • Predicted an asset have fail within certain time frame (e.g. days). for example, it may be best to aggergate sensor readings that occur every second - if failures occur only once every couple of months. for example - to day or week values before modeling (to get a more balanced dataset between rows that represent failure and rows that represent non-failure).
 
 Modeling & Prediction
